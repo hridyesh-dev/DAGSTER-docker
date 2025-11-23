@@ -1,0 +1,15 @@
+here we will define run storage log storage
+and schedule storage 
+
+📌 What is dagster.yaml?
+
+It is the Dagster Instance Configuration File.
+
+Dagster needs a directory called DAGSTER_HOME to store all runtime metadata:
+
+Stored Data	Why it matters
+Runs history	UI shows your pipeline history
+Asset metadata	Freshness timestamps, lineage tracking
+Schedules, sensors state	Persistent automation
+Logs	Debugging + alerting
+Event records	Observability

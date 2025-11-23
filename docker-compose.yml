@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  dagster:
+    image: dagster-etl:0.1
+    container_name: dagster_etl
+    ports:
+      - "3000:3000"
+    environment:
+      DAGSTER_HOME: /opt/dagster/dagster_home
+    volumes:
+      - ./etl:/opt/dagster/app/etl  # mount code for development
+      - dagster_home:/opt/dagster/dagster_home # metadata persistence
+    command: ["dagster", "dev", "-h", "0.0.0.0", "-p", "3000"]
+
+volumes:
+  dagster_home:
